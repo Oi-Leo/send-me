@@ -14,7 +14,7 @@ class ActiveNowAdapter : RecyclerView.Adapter<ActiveNowAdapter.ActiveNowView>() 
     }
 
     override fun getItemCount(): Int {
-        return 5
+        return 15
     }
 
     override fun onBindViewHolder(holder: ActiveNowView, position: Int) {

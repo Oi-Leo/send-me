@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.fragment.app.commit
 import com.example.sendme.R
+import com.example.sendme.core.newmessage.view.NewMessageFragment
 import com.example.sendme.databinding.ActivityInboxBinding
 
 class InboxActivity : AppCompatActivity() {
@@ -14,8 +16,6 @@ class InboxActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityInboxBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.toolbar.title = "Chats"
         setSupportActionBar(binding.toolbar)
     }
 
@@ -27,7 +27,17 @@ class InboxActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.new_action -> {
-
+                val fragment = NewMessageFragment()
+                supportFragmentManager.commit {
+                    setCustomAnimations(
+                        R.anim.slide_in,
+                        R.anim.fade_out,
+                        R.anim.fade_in,
+                        R.anim.slide_out
+                    )
+                    replace(R.id.fragment_container_view, fragment)
+                    addToBackStack(null)
+                }
             }
         }
         return super.onOptionsItemSelected(item)
