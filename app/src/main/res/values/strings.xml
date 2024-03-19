@@ -9,4 +9,13 @@
     <string name="signup">Sign in</string>
     <string name="new_message">New message</string>
     <string name="to">To:</string>
+    <string name="preferences">Preferences</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="active_status">Active status</string>
+    <string name="accessibility">Accessibility</string>
+    <string name="privacy_and_safety">Privacy and safety</string>
+    <string name="notifications">Notifications</string>
+    <string name="account">Account</string>
+    <string name="log_out">Log out</string>
+    <string name="delete_account">Delete account</string>
 </resources>
