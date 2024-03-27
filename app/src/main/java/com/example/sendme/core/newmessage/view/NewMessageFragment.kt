@@ -13,6 +13,7 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sendme.R
 import com.example.sendme.databinding.ContactRowItenBinding
 import com.example.sendme.databinding.FragmentNewMessageBinding
 
@@ -50,6 +51,7 @@ class NewMessageFragment : Fragment(), MenuProvider {
         activity.supportActionBar?.title = "New Message"
 
         activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        activity.supportActionBar?.setHomeAsUpIndicator(R.drawable.baseline_arrow_back_24)
     }
 
     override fun onDestroyView() {

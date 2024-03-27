@@ -1,5 +1,6 @@
 package com.example.sendme.core.inbox.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -7,6 +8,7 @@ import android.view.MenuItem
 import androidx.fragment.app.commit
 import com.example.sendme.R
 import com.example.sendme.core.newmessage.view.NewMessageFragment
+import com.example.sendme.core.profile.view.ProfileActivity
 import com.example.sendme.databinding.ActivityInboxBinding
 
 interface ToolbarCallback {
@@ -40,6 +42,7 @@ class InboxActivity : AppCompatActivity(), ToolbarCallback {
     }
 
     override fun goToProfile() {
-        TODO("Not yet implemented")
+        val intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
     }
 }
