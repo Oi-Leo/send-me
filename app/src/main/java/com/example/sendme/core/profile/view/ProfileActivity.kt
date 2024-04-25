@@ -3,6 +3,8 @@ package com.example.sendme.core.profile.view
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.MenuItem
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sendme.databinding.ActivityProfileBinding
 
@@ -18,7 +20,17 @@ class ProfileActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.title = "Me"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        binding.imgProfile.setOnClickListener {
+            pickerMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+        }
     }
+
+    private val pickerMedia =
+        registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
+            binding.imgProfile.setContentPadding(0, 0, 0, 0)
+            binding.imgProfile.setImageURI(uri)
+        }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
